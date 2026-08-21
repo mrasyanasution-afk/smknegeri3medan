@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Negeri 3 Medan - Jurusan & Materi</title>
+    
+    <!-- Memuat file CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="logo-text">
+                <h1>SMKN 3 Medan</h1>
+                <span>Pusat Keunggulan</span>
+            </div>
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="jurusan.html">Jurusan & Materi</a></li>
+            <li><a href="profil.html">Profil Developer</a></li>
+        </ul>
+    </nav>
+
+    <section id="jurusan">
+        <div class="section-header reveal">
+            <h2>Program Keahlian Kami</h2>
+            <p style="margin-top: 10px; color: var(--text-muted);">Klik pada kartu jurusan untuk melihat materi pembelajaran (Kelas 10-12).</p>
+        </div>
+
+        <div class="jurusan-grid">
+            <div class="jurusan-card reveal delay-1" onclick="bukaModal('ki')">
+                <div class="jurusan-icon"><i class="fa-solid fa-flask"></i></div>
+                <h3>Kimia Industri (KI)</h3>
+                <p>Mempelajari proses pengolahan bahan baku menggunakan reaksi kimia industri skala besar.</p>
+                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Lihat Materi</span>
+            </div>
+
+            <div class="jurusan-card reveal delay-2" onclick="bukaModal('apl')">
+                <div class="jurusan-icon"><i class="fa-solid fa-vial-virus"></i></div>
+                <h3>Analisis Pengujian Lab (APL)</h3>
+                <p>Fokus pada keterampilan pengujian kualitas produk secara fisika, kimia, dan mikrobiologi.</p>
+                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Lihat Materi</span>
+            </div>
+
+            <div class="jurusan-card reveal delay-3" onclick="bukaModal('fkk')">
+                <div class="jurusan-icon"><i class="fa-solid fa-pills"></i></div>
+                <h3>Farmasi Klinis (FKK)</h3>
+                <p>Kompetensi dalam bidang pelayanan kefarmasian, resep obat, di apotek dan rumah sakit.</p>
+                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Lihat Materi</span>
+            </div>
+
+            <div class="jurusan-card reveal delay-4" onclick="bukaModal('tlm')">
+                <div class="jurusan-icon"><i class="fa-solid fa-microscope"></i></div>
+                <h3>Teknik Lab Medik (TLM)</h3>
+                <p>Pelayanan pemeriksaan dan pengujian spesimen medis manusia untuk diagnosis penyakit.</p>
+                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Lihat Materi</span>
+            </div>
+
+            <div class="jurusan-card reveal delay-5" onclick="bukaModal('rpl')" style="border: 2px solid var(--secondary-blue);">
+                <div class="jurusan-icon" style="background: rgba(56, 182, 255, 0.2);"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Rekayasa Perangkat Lunak (RPL)</h3>
+                <p>Mempelajari cara membuat website, menciptakan dan mengembangkan aplikasi, hingga UI/UX Design.</p>
+                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Lihat Materi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elemen Modal (Jendela Pop-up Materi) -->
+    <div class="modal-overlay" id="modalMateri">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle"><i class="fa-solid fa-book-open"></i> Judul Jurusan</h3>
+                <button class="close-modal" onclick="tutupModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="gantiTab(10)">Kelas 10</button>
+                <button class="tab-btn" onclick="gantiTab(11)">Kelas 11</button>
+                <button class="tab-btn" onclick="gantiTab(12)">Kelas 12</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="semester-container active" id="kontenMateri">
+                    <div class="semester-box">
+                        <h4>Semester 1</h4>
+                        <ul id="listSem1"></ul>
+                    </div>
+                    <div class="semester-box">
+                        <h4>Semester 2</h4>
+                        <ul id="listSem2"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Dibuat dengan <i class="fa-solid fa-heart"></i> oleh <strong>Rasya</strong> (RPL) &copy; 2026 | SMK Negeri 3 Medan</p>
+    </footer>
+
+    <!-- Memuat file JavaScript Eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
